@@ -1,0 +1,55 @@
+<mujoco>
+    <actuator>
+        <motor name="actuator_motor1" joint="hinge_2" gear="100"/>
+        <motor name="actuator_moto2" joint="hinge_4" gear="100"/>
+    </actuator>
+
+    <asset>
+        <material name="blue_" rgba="0 0 1 1" />
+        <material name="green" rgba="0 1 0 1" />
+        <material name="red__" rgba="1 0 0 1" />
+        <material name="white" rgba="1 1 1 1" />
+    </asset>
+
+    <worldbody>
+       <geom type="plane" size="10 10 0.1" pos="0 0 -5" rgba=".9 0 0 1" />
+        <light diffuse=".5 .5 .5" pos="0 0 3" dir="0 0 -1" />
+        <body name="joint_1" pos="0.2 0 0.02">
+            <joint name="hinge_1" type="hinge" axis="0 0 1" pos="0 0 0" />
+            <geom type="cylinder" size="0.02 0.015" material="blue_" mass="0.06" />
+            <body name="link_1" pos="0 -0.1 0"  euler="0 0 -90">
+                <geom type="box" size="0.1 0.01 0.005" material="green" mass="0.02" />
+                <body name="joint_2" pos="0.1 0 0" euler="0 0 0">
+                    <joint name="hinge_2" type="hinge" axis="0 0 1" pos="0 0 0" />
+                    <geom type="cylinder" size="0.02 0.015" material="blue_" mass="0.06" />
+                    <body name="link_2" pos="0.0875 -0.065 0" euler="0 0 -37">
+                        <geom type="box" size="0.1 0.01 0.005" material="green" mass="0.02" contype="0" conaffinity="0"/>
+                        <body name="end_effector" pos="0.1 0 0">
+                            <geom type="cylinder" size="0.02 0.015" material="blue_" mass="0.06" />
+                            <body name="link_4" pos="-0.0275 -0.1 0" euler="0 0 74">
+                                <geom type="box" size="0.1 0.01 0.005" material="green" mass="0.02" contype="0" conaffinity="0"/>
+                                <body name="joint_5" pos="-0.1 0 0" euler="0 0 0">
+                                    <joint name="hinge_3" type="hinge" axis="0 0 1" pos="0 0 0" />
+                                    <geom type="cylinder" size="0.02 0.015" material="blue_" mass="0.06" />
+                                    <body name="link_3" pos="-0.08 0.057 0" euler="0 0 -35">
+                                        <geom type="box" size="0.1 0.01 0.005" material="green" mass="0.02" />
+                                        <body name="joint_3" pos="-0.1 0 0">
+                                            <joint name="hinge_4" type="hinge" axis="0 0 1" pos="0 0 0" />
+                                            <geom type="cylinder" size="0.02 0.015" material="blue_" mass="0.06" />
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+
+    <equality>
+        <connect name="kinematic_link" active="true" body1="joint_3" anchor="0 0 0"/>
+    </equality>
+    
+</mujoco>
