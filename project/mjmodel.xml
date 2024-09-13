@@ -1,0 +1,47 @@
+<mujoco model="retake">
+  <compiler angle="radian"/>
+
+  <asset>
+    <mesh name="base_link" file="base_link.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component91" file="Component91.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component31" file="Component31.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component71" file="Component71.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component9Mirror_11" file="Component9Mirror_11.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component7Mirror_11" file="Component7Mirror_11.stl" scale="0.001 0.001 0.001"/>
+    <mesh name="Component21" file="Component21.stl" scale="0.001 0.001 0.001"/>
+  </asset>
+
+  <worldbody>
+    <geom type="mesh" mesh="base_link"/>
+    <body name="Component21" pos="0.09 0.025 0.015">
+      <inertial pos="-0.0895 9.40817e-10 1.5566e-09" quat="0.5 0.5 0.5 0.5" mass="0.370855" diaginertia="0.0029201 0.00153405 0.00139069"/>
+      <joint name="Revolute_14" pos="0 0 0" axis="-1 0 0"/>
+      <geom pos="-0.09 -0.025 -0.015" quat="1 0 0 0" type="mesh" mesh="Component21"/>
+      <body name="Component91" pos="0.0655 0 0">
+        <inertial pos="-0.0145427 0.0126283 0.0471294" quat="0.977286 -0.128662 -0.166958 0.0219805" mass="0.0653215" diaginertia="7.56494e-05 7.53184e-05 2.27264e-06"/>
+        <joint name="Revolute_6" pos="0 0 0" axis="1 0 0"/>
+        <geom pos="-0.1555 -0.025 -0.015" type="mesh" mesh="Component91"/>
+        <body name="Component71" pos="-0.018016 -0.071217 0.041117">
+          <inertial pos="-0.0405315 0.0241298 0.0615981" quat="0.504602 0.0510078 -0.635686 0.58196" mass="0.108228" diaginertia="0.000301298 0.000295636 9.87263e-06"/>
+          <joint name="Revolute_10" pos="0 0 0" axis="0.855364 0.134075 0.500376"/>
+          <geom pos="-0.137484 0.046217 -0.056117" quat="1 0 0 0" type="mesh" mesh="Component71"/>
+        </body>
+      </body>
+      <body name="Component31" pos="-0.0895 0 0.15">
+        <inertial pos="-0.000223009 -0.0954886 -0.129454" quat="0.999977 0.00668603 -0.000893274 -0.000470414" mass="0.33625" diaginertia="0.00403164 0.00353145 0.00061626"/>
+        <joint name="Revolute_8" pos="0 0 0" axis="0 0 1"/>
+        <geom pos="-0.0005 -0.025 -0.165" quat="1 0 0 0" type="mesh" mesh="Component31"/>
+      </body>
+      <body name="Component9Mirror_11" pos="-0.2445 0 0">
+        <inertial pos="0.0145427 0.0126283 0.0471294" quat="0.977286 -0.128662 0.166958 -0.0219805" mass="0.0653215" diaginertia="7.56494e-05 7.53184e-05 2.27264e-06"/>
+        <joint name="Revolute_11" pos="0 0 0" axis="-1 0 0"/>
+        <geom pos="0.1545 -0.025 -0.015" type="mesh" mesh="Component9Mirror_11"/>
+        <body name="Component7Mirror_11" pos="0.290989 0.111212 -0.007765">
+          <inertial pos="-0.232419 -0.158345 0.110488" quat="0.582509 0.635689 -0.0505908 0.504008" mass="0.108339" diaginertia="0.000301423 0.0002958 9.83734e-06"/>
+          <joint name="Revolute_12" pos="0 0 0" axis="0.855364 -0.134075 -0.500376"/>
+          <geom pos="-0.136489 -0.136212 -0.007235" quat="1 0 0 0" type="mesh" mesh="Component7Mirror_11"/>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+</mujoco>
